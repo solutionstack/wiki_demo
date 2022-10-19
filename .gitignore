@@ -1,0 +1,12 @@
+**/.DS_Store
+# test coverage
+cp.out
+vendor
+workspace.xml
+.idea
+.idea/**/*
+solo-service
+.vscode/*
+start*
+\\
+__debug_bin
