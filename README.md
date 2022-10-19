@@ -1,6 +1,6 @@
 # wiki_demo
 
-### Demo Parsing short-description from a wiki page query
+### Demo Wiki API Tool
 
 
 #### Clone
