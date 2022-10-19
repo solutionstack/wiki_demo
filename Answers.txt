@@ -1,0 +1,27 @@
+
+
+Q1.: How will the schema take into consideration if the person being provided is not on English
+    wikipedia.
+
+Ans: A common way to solve this would be to have translations for the different labels in the output json.
+The right translation file is loaded based off the region specified in the URL e.g ja.wikipedia.com would load the japanese translations file.
+And the fields of the response struct are matched appropriately generating the right response json to the client
+
+
+Q2. How will you account for missing “short description” in content.
+
+Ans: I would opt to fallback on appropriate replacement content like the Category sections or one of the Citations
+
+
+
+Q3. Consider this hypothetical scenario: Your API is going to be deployed and made available to the public for
+    use. What things could you do to keep this API service highly available and reliable? (Think of as many
+    issues as come to your mind and propose your potential solutions. No code is required for this)
+
+Ans: My strategy for high-availability would depend on on various expectations from assumed traffic to regions being serviced and more.
+But generally I'd take the following approaches.
+ - Employ caching heavily as the content is text heavy and wouldn't change too often
+ - Deploy via an orchestration mechanism like kubernetes so Nodes/pods can be scaled automatically with demand.
+ - Deploy in as many regions as viable to reduce latency and further manage load
+ - Make use of API gateway rules like rate-limiting to ensure no client is hogging resources
+ - Deploy updates via some form of gradual rollout strategy, so a bug in the recent deployment would not halt the entire service availability
