@@ -17,7 +17,7 @@ go get
 go run main.go demo
 ```
 
-#### Call query endpoint (e.g)
+#### Call query endpoint to return short-description (e.g)
 ```bash
 curl --location --request GET 'localhost:8081/api?query=Yoshua_Bengio'
 ```
